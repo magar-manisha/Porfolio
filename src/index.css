@@ -3,9 +3,15 @@
 @theme {
   --color-primary: #e5e5e0;
   --color-secondary:#013220
+
   --color-DarkLava: #393632;
   --color-SageGray: #8b8b73;
   --color-gold: #cfa355;
+
+  --color-text-200: #3A383F;
+  --color-text-300: #18171D;
+  --color-text-100: #6B7280;
+  --color-text-light: #6a645d;
 
   --animate-marquee: marquee 40s infinite linear;
   @keyframes marquee {
@@ -19,6 +25,7 @@
 }
 
 body {
+  /* background: #D1C6B8; */
   background: #e5e5e0;
   color: black;
   scroll-behavior: smooth;

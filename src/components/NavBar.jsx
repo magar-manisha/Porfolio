@@ -13,7 +13,7 @@ const NavBar = () => {
   const tl = useRef(null);
   const iconTl = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [showBurger, setShowBurger] = useState(true);
+  const [showBurger, setShowBurger] = useState(false);
 
   useGSAP(() => {
     gsap.set(navRef.current, { xPercent: 100 });
@@ -72,13 +72,9 @@ const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      setShowBurger(currentScrollY <= lastScrollY || currentScrollY < 10);
-
-      lastScrollY = currentScrollY;
+      setShowBurger( currentScrollY >300);
     };
     window.addEventListener("scroll", handleScroll, {
       passive: true,
@@ -101,16 +97,18 @@ const NavBar = () => {
     <>
       <nav
         ref={navRef}
-        className="fixed z-50 flex flex-col justify-between w-full h-full px-20 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2"
+        className="fixed z-50 flex flex-col justify-between w-full h-full px-5 md:px-20 2xl:px-50 uppercase bg-black text-white/80 py-10 md:pt-28 md:pb-17 2xl:py-80 gap-y-10 md:w-1/2 md:left-1/2"
       >
         {/* header */}
-        <div className="font-light">
+        <div className="">
+        {/* top */}
+        <div className="font-light 2xl:pb-35 pb-10">
           <p className="tracking-wider text-white/50 border-b-1 border-white/50 pb-5">
             Navigation
           </p>
         </div>
         {/* link */}
-        <div className="flex flex-col text-5xl gap-y-2 md:text-4xl lg:text-6xl 2xl:text-8xl">
+        <div className="flex flex-col text-3xl gap-y-2 2xl:gap-y-6 md:text-4xl lg:text-5xl">
           {["home", "service", "work", "about", "contact"].map(
             (section, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
@@ -127,6 +125,7 @@ const NavBar = () => {
             )
           )}
         </div>
+        </div>
         {/* social */}
         <div
           ref={contactRef}
@@ -134,13 +133,13 @@ const NavBar = () => {
         >
           <div className="font-light">
             <p className="tracking-wider text-white/50">E-mail</p>
-            <p className="text-xl tracking-widest lowercase text-pretty">
+            <p className="lg:text-xl tracking-widest lowercase text-pretty">
               magarmanisha248@gmail.com
             </p>
           </div>
           <div className="font-light">
             <p className="tracking-wider text-white/50">Social Media</p>
-            <div className="flex flex-col flex-wrap md:flex-row gap-x-2">
+            <div className="flex flex-wrap gap-x-2">
               {socials.map((social, index) => (
                 <a
                   key={index}

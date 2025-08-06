@@ -7,6 +7,7 @@ import gsap from "gsap";
 const Service = () => {
   const serviceRefs = useRef([]);
   const isDesktop = useMediaQuery({ minWidth: "48rem" });
+
   useGSAP(() => {
     serviceRefs.current.forEach((el) => {
       if (!el) return;
@@ -23,7 +24,7 @@ const Service = () => {
     });
   }, []);
   return (
-    <section id="section" className="min-h-screen bg-black rounded-t-4xl px-20">
+    <section id="service" className="min-h-screen bg-black rounded-t-4xl px-10">
       <div className="pt-20">
         <h1 className="text-8xl text-white">How I Build ...</h1>
         <div className="w-full flex justify-between items-center gap-10 text-white py-10">

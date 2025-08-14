@@ -38,11 +38,11 @@ const Contact = () => {
     // You can send `formData` to an API here
   };
   return (
-    <section id="contact" className="py-20 px-10 bg-black rounded-2xl mt-5">
-      <h1 className="text-8xl text-white pb-10">Let's work together</h1>
+    <section id="contact" className="py-20 px-5 md:px-10 bg-black rounded-2xl mt-5">
+      <h1 className="text-4xl md:text-8xl text-white pb-10">Let's work together</h1>
 
-      <div className="flex w-full px-20 pb-20">
-        <form onSubmit={handleSubmit} className="w-2/3 relative mr-25">
+      <div className="flex w-full md:px-20 pb-20">
+        <form onSubmit={handleSubmit} className="md:w-2/3 w-full relative md:mr-25">
           {ContactQsn.map((item, index) => (
             <div
               key={index}
@@ -75,13 +75,13 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="bg-blue-600 text-white p-15 w-fit h-fit rounded-full hover:bg-blue-700 absolute z-100 -bottom-15 right-30 flex items-center justify-center"
+            className="bg-blue-600 text-white md:p-15 p-7 w-fit h-fit rounded-full hover:bg-blue-700 absolute z-100 md:-bottom-15 -bottom-10 right-30 flex items-center justify-center"
           >
             Submit
           </button>
         </form>
 
-        <div className="w-1/3 pt-10 ">
+        <div className="w-1/3 pt-10 hidden md:block">
           <div className="pb-7 text-white">
             <h1 className="text-sm text-text-100">Contact Details</h1>
             <a

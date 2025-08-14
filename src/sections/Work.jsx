@@ -93,8 +93,8 @@ const Work = () => {
 
   const handleMouseMove = (e) => {
     if (window.innerWidth < 768) return;
-    mouse.current.x = e.clientX +24;
-    mouse.current.y = e.clientY + 24;
+    mouse.current.x = e.clientX;
+    mouse.current.y = e.clientY ;
     moveX.current(mouse.current.x);
     moveY.current(mouse.current.y);
   };
@@ -102,17 +102,17 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="min-h-screen bg-black text-white px-10 rounded-b-4xl"
+      className="min-h-screen bg-black text-white md:px-10 px-5 rounded-b-4xl"
     >
       <div className="pt-20">
-        <h1 className="text-7xl text-white">SELECTED WORKS ...</h1>
-        <div className="w-full flex justify-between items-center gap-10 text-white py-10">
-          <p className="text-3xl w-2/3 pr-5">
+        <h1 className="text-3xl md:text-7xl text-white">SELECTED WORKS ...</h1>
+        <div className="w-full flex flex-col md:flex-row justify-between items-center gap-10 text-white py-10">
+          <p className="md:text-3xl w-full md:w-2/3 pr-5">
             Each project is a shared process — from concept to polished
             experience. Every build pushes boundaries, solves real problems, and
             creates intentional impact.
           </p>
-          <p className="w-1/3 text-white/70">
+          <p className="w-full md:w-1/3 text-white/70">
             These selected works reflect my approach — thoughtful, practical,
             and refined. From frontend polish to backend stability, every detail
             matters — not just how it looks, but how it works, performs, and
@@ -121,13 +121,13 @@ const Work = () => {
         </div>
       </div>
       <div className="relative flex justify-between pt-10">
-        <div className="w-2/4 sticky top-10 h-screen">
+        <div className="w-2/4 sticky top-10 h-screen hidden md:block">
           <p className="text-5xl lg:text-[17rem] font-medium text-white/70">
             0{currentIndex}
           </p>
         </div>
         <div
-          className="w-3/4 relative flex flex-col font-light"
+          className="w-full md:w-3/4 relative flex flex-col font-light"
           onMouseMove={handleMouseMove}
         >
           {projects.map((item, index) => (
@@ -156,7 +156,7 @@ const Work = () => {
               <p className="text-4xl lg:text-5xl font-medium py-5 leading-none">
                 {item.name}
               </p>
-              <div className="py-5 border-t-2 border-white/30 text-white/70 flex justify-between items-center">
+              <div className="py-5 border-t-2 border-white/30 text-white/70 flex flex-col gap-y-3 md:flex-row justify-between md:items-center">
                 <p className="text-lg ">{item.description}</p>
                 <div className="flex text-lg  gap-3">
                   <p className="border-[1px] rounded-2xl px-2">{item.role}</p>
@@ -169,11 +169,6 @@ const Work = () => {
           <div
             ref={previewRef}
             className="bg-blue-600 rounded-full fixed top-0 left-0 w-28 h-28 z-50 hidden md:block pointer-events-none opacity-0 transform -translate-x-1/2 -translate-y-1/2"
-            style={{
-              // Initial position off-screen
-              left: '-100px',
-              top: '-100px'
-            }}
           >
             {pointerCurrentIndex !== null && (
               <a

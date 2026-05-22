@@ -14,6 +14,8 @@ const Work = () => {
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [pointerCurrentIndex, setpointerCurrentIndex] = useState(null);
+  const numberDisplayRef = useRef(null);
+  const prevIndexRef = useRef(1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +32,16 @@ const Work = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const el = numberDisplayRef.current;
+    if (!el) return;
+    const direction = currentIndex > prevIndexRef.current ? 1 : -1;
+    prevIndexRef.current = currentIndex;
+    gsap.killTweensOf(el);
+    el.textContent = `0${currentIndex}`;
+    gsap.fromTo(el, { y: `${direction * 110}%` }, { y: "0%", duration: 1.2, ease: "power3.out" });
+  }, [currentIndex]);
 
   useGSAP(() => {
     gsap.to("#work", {
@@ -121,8 +133,8 @@ const Work = () => {
         </div>
       </div>
       <div className="relative flex justify-between pt-10">
-        <div className="w-2/4 sticky top-10 h-screen hidden md:block">
-          <p className="text-5xl lg:text-[17rem] font-medium text-white/70">
+        <div className="w-2/4 sticky top-10 h-screen hidden md:block overflow-hidden">
+          <p ref={numberDisplayRef} className="text-5xl lg:text-[17rem] font-medium text-white/70">
             0{currentIndex}
           </p>
         </div>

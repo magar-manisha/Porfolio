@@ -27,25 +27,24 @@ const Hero = () => {
 
       {/* body */}
       <div className="mt-10 md:mt-20 2xl:mt-[20%] flex flex-col justify-between flex-1">
-        <div className="w-full text-black font-medium text-[clamp(2rem,12.4vw,19rem)] flex justify-start items-start transform scale-y-120 origin-bottom">
+        {/* Mobile: 2 lines */}
+        <div className="md:hidden flex flex-col w-full px-7 transform scale-y-120 origin-bottom">
+          <p className="text-black font-medium leading-none tracking-tighter text-[clamp(2.5rem,20vw,6rem)]">
+            MANISHA
+          </p>
+          <p className="text-black font-medium leading-none tracking-tighter text-[clamp(3rem,28vw,8rem)]">
+            MAGAR
+          </p>
+        </div>
+
+        {/* Desktop: 1 line, centered */}
+        <div className="hidden md:flex w-full text-black font-medium text-[clamp(2rem,12.4vw,19rem)] justify-center items-start transform scale-y-120 origin-bottom">
           {[
-            "M",
-            "A",
-            "N",
-            "I",
-            "S",
-            "H",
-            "A",
-            "\u00A0",
-            "\u00A0",
-            "\u00A0",
-            "M",
-            "A",
-            "G",
-            "A",
-            "R",
+            "M","A","N","I","S","H","A",
+            "\u00A0","\u00A0","\u00A0",
+            "M","A","G","A","R",
           ].map((item, index) => (
-            <span key={index} className="leading-none tracking-[-0.05em] ">
+            <span key={index} className="leading-none tracking-tighter">
               {item}
             </span>
           ))}

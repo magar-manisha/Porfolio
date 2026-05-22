@@ -97,13 +97,13 @@ const NavBar = () => {
     <>
       <nav
         ref={navRef}
-        className="fixed z-50 flex flex-col justify-between w-full h-full px-5 md:px-20 2xl:px-50 uppercase bg-black text-white/80 py-10 md:pt-28 md:pb-17 2xl:py-80 gap-y-10 md:w-1/2 md:left-1/2"
+        className="fixed z-50 flex flex-col justify-between w-full h-full px-5 md:px-20 2xl:px-50 uppercase bg-white text-gray-800 py-10 md:pt-28 md:pb-17 2xl:py-80 gap-y-10 md:w-1/2 md:left-1/2"
       >
         {/* header */}
         <div className="">
         {/* top */}
         <div className="font-light 2xl:pb-35 pb-10">
-          <p className="tracking-wider text-white/50 border-b-1 border-white/50 pb-5">
+          <p className="tracking-wider text-gray-800 border-b-1 border-white/50 pb-5">
             Navigation
           </p>
         </div>
@@ -113,7 +113,7 @@ const NavBar = () => {
             (section, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
                 <Link
-                  className="transition-all duration-300 cursor-pointer hover:text-white"
+                  className="transition-all duration-300 cursor-pointer hover:text-gray-600"
                   to={`${section}`}
                   smooth
                   offset={0}
@@ -132,13 +132,13 @@ const NavBar = () => {
           className="flex flex-col flex-wrap justify-between gap-8 md:flex-row"
         >
           <div className="font-light">
-            <p className="tracking-wider text-white/50">E-mail</p>
+            <p className="tracking-wider text-gray-700">E-mail</p>
             <p className="lg:text-xl tracking-widest lowercase text-pretty">
               magarmanisha248@gmail.com
             </p>
           </div>
           <div className="font-light">
-            <p className="tracking-wider text-white/50">Social Media</p>
+            <p className="tracking-wider text-gray-700">Social Media</p>
             <div className="flex flex-wrap gap-x-2">
               {socials.map((social, index) => (
                 <a
@@ -158,7 +158,7 @@ const NavBar = () => {
         </div>
       </nav>
       <div
-        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10"
+        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-blue-600 hover:bg-blue-700 rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10"
         onClick={toggleMenu}
         style={
           showBurger

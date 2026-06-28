@@ -26,17 +26,18 @@ const Service = () => {
   return (
     <section id="service" className="min-h-screen bg-black rounded-t-4xl px-5 md:px-10">
       <div className="pt-20">
-        <h1 className="text-4xl md:text-8xl text-white">How I Build ...</h1>
+        <h1 className="text-4xl md:text-8xl text-white">What I Do ...</h1>
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-10 text-white py-10">
           <p className="md:text-3xl w-full md:w-2/3">
-            Collaboration is key — together, we turn ideas into impactful
-            digital experiences through clear communication and continuous
-            improvement.
+            I work across the full stack, building interfaces people enjoy
+            using, backends that hold up under load, and mobile apps that feel
+            native on any device.
           </p>
           <p className="w-full md:w-1/3 text-white/70">
-            I blend thoughtful design principles, clean, efficient, and scalable
-            code, with optimized performance techniques to create full-stack
-            solutions that are fast, functional, and user-focused.
+            My professional background is in frontend engineering, and my
+            personal projects are where I've built and shipped the rest.
+            Everything listed here is something I've actually done, not a
+            wishlist.
           </p>
         </div>
       </div>

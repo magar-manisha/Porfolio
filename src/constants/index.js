@@ -6,59 +6,59 @@ export const socials = [
 
 export const servicesData = [
   {
-    title: "FullStack Development",
+    title: "Full-Stack Development",
     description:
-      "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
+      "I build complete web applications, from the database to the UI. With professional frontend experience and backend built through real shipped products, I handle the full picture: APIs, auth, database design, and everything the user sees.",
     items: [
       {
-        title: "Backend Engineering",
-        description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
+        title: "Frontend Engineering",
+        description: "(React, TypeScript, Tailwind, GSAP)",
       },
       {
-        title: "Frontend Excellence",
-        description: "(React, Vue, TypeScript, Interactive UI/UX)",
+        title: "Backend & APIs",
+        description: "(Node.js, REST APIs, Auth Systems)",
       },
       {
         title: "Database Design",
-        description: "(SQL/NoSQL Optimization, Scalable Structures)",
+        description: "(SQL & NoSQL, Schema Design, Query Optimization)",
       },
     ],
   },
   {
-    title: "Security & Optimization",
+    title: "Performance & Optimization",
     description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
+      "A great app that loads slowly or breaks under traffic isn't great. I audit, refactor, and optimize, cutting unnecessary weight, improving Core Web Vitals, and making sure the code is maintainable long after launch.",
     items: [
       {
-        title: "Code Audits",
-        description: "(Refactoring, Tech Debt Cleanup)",
+        title: "Code Audits & Refactoring",
+        description: "(Tech Debt Cleanup, Readability, Maintainability)",
       },
       {
-        title: "Pen Testing",
-        description: "(Vulnerability Assessments)",
+        title: "Performance Tuning",
+        description: "(Core Web Vitals, Bundle Size, Lazy Loading)",
       },
       {
-        title: "SEO Tech Stack",
+        title: "SEO & Discoverability",
         description: "(SSR, Metadata, Structured Data)",
       },
     ],
   },
   {
-    title: "Web & Mobile Apps",
+    title: "Mobile Apps",
     description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
+      "I build cross-platform mobile apps using React Native and Flutter, one codebase, native feel on both iOS and Android. From UI to backend integration, I ship apps that work the way users expect.",
     items: [
       {
-        title: "Cross-Platform Apps",
-        description: "(Single codebase for iOS/Android/Web)",
+        title: "Cross-Platform Development",
+        description: "(React Native, Flutter, iOS & Android)",
       },
       {
-        title: "PWAs",
-        description: "(Offline mode, Push Notifications)",
+        title: "UI & Navigation",
+        description: "(Custom Components, Stack & Tab Navigation)",
       },
       {
-        title: "E-Commerce",
-        description: "(Checkout flows, Payment Gateways, Inventory APIs)",
+        title: "Backend Integration",
+        description: "(REST APIs, Auth, Real-time Data)",
       },
     ],
   },
@@ -68,7 +68,7 @@ export const projects = [
   {
     id: 1,
     name: "Karcha Diary",
-    description: "A Personal Nepali Expense Tracker",
+    description: "Personal expense tracker built for Nepali users, track, categorize, and visualize daily spending.",
     role: "Development",
     href: "",
     image: "/projects/kharchaDiary.png",
@@ -78,7 +78,7 @@ export const projects = [
   {
     id: 2,
     name: "EduEcho",
-    description: "AI-powered Voice LMS SaaS App",
+    description: "Voice-first learning platform, AI-generated courses, quizzes, and progress tracking via speech.",
     role: "Development",
     href: "",
     image: "/projects/saas.png",
@@ -88,7 +88,7 @@ export const projects = [
   {
     id: 3,
     name: "VolleyPro League",
-    description: "A Volleyball league",
+    description: "Team and match management system for organized volleyball leagues, standings, schedules, and results.",
     href: "",
     role: "Development",
     image: "/projects/volleyballLeague.png",
@@ -98,7 +98,7 @@ export const projects = [
   {
     id: 4,
     name: "RecoReads",
-    description: "ML Book Recommender",
+    description: "ML-powered book discovery, recommends titles based on reading history and user preferences.",
     role: "Development",
     href: "",
     image: "/projects/bookRecoomend.png",
@@ -108,7 +108,7 @@ export const projects = [
   {
     id: 5,
     name: "EncryptX",
-    description: "A Parallel File Encryption System for Operating Systems",
+    description: "Multi-threaded file encryption tool built in C, designed around OS-level concurrency and process isolation.",
     role: "Development",
     href: "",
     image: "/projects/code2image.png",

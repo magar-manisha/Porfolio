@@ -47,17 +47,17 @@ const About = () => {
       <div className="py-20 xl:px-40 lg:px-0 md:px-20 flex flex-col lg:flex-row  md:gap-20 gap-10 ">
         <img src="/images/profile.png" alt="Profile" className="w-full md:w-200 md:h-150 2xl:w-1/2 2xl:h-1/2" />
         <div className="flex flex-col lg:justify-center md:gap-y-10 gap-y-3">
-          <p className="text-4xl md:text-7xl 2xl:text-9xl font-semibold ">So, who am I ?</p>
+          <p className="text-4xl md:text-7xl 2xl:text-9xl font-semibold ">So, who am I?</p>
           <p className="text-text-light text-lg 2xl:text-4xl">
-            I’m a results-driven Software Engineer with a strong passion for
-            crafting full-stack web applications that are fast, scalable, and
-            user-focused. With expertise in modern frameworks like React.js and
-            Tailwind CSS, I transform complex ideas into clean, intuitive
-            digital solutions.
-            <br /><br /> I thrive in fast-paced, collaborative environments and excel
-            at solving challenging problems with precision and creativity. I aim
-            to build products that not only function flawlessly but also deliver
-            real value to users.
+            I’m a Software Engineer who builds complete web applications,
+            from designing APIs and structuring databases to the interfaces
+            users actually interact with. I care about how systems are put
+            together, not just how they look.
+            <br /><br /> Professionally, I’ve worked as a frontend engineer,
+            which gave me a solid understanding of how real products are built,
+            reviewed, and maintained in teams. My personal projects are where
+            I’ve applied that same discipline across the full stack, owning
+            every layer from database schema to deployed UI.
           </p>
         </div>
       </div>

@@ -146,7 +146,7 @@ const NavBar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href={social.href}
-                  className="flex text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
+                  className="flex text-sm leading-loose tracking-widest uppercase text-gray-700 hover:text-gray-500 transition-colors duration-300"
                 >
                   {"{ "}
                   {social.name}
@@ -158,10 +158,10 @@ const NavBar = () => {
         </div>
       </nav>
       <div
-        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-blue-600 hover:bg-blue-700 rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10"
+        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-blue-600 hover:bg-blue-500 rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10"
         onClick={toggleMenu}
         style={
-          showBurger
+          showBurger || isOpen
             ? { clipPath: "circle(50% at 50% 50%)" }
             : { clipPath: "circle(0% at 50% 50%)" }
         }

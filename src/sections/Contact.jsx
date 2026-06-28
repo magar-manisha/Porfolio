@@ -41,7 +41,7 @@ const Contact = () => {
       className="py-20 px-5 md:px-10 bg-black rounded-2xl mt-5"
     >
       <h1 className="text-4xl md:text-8xl text-white pb-10">
-        Let's work together
+        Got a project in mind?
       </h1>
 
       <div className="flex w-full md:px-20 pb-20">
@@ -82,7 +82,7 @@ const Contact = () => {
           <div className="flex-1 flex">
             <button
               type="submit"
-              className="bg-blue-600 cursor-pointer text-white w-28 h-28 md:w-40 md:h-40 rounded-full hover:bg-blue-700 absolute z-100 md:-bottom-15 -bottom-10 right-30 flex items-center justify-center"
+              className="bg-blue-600 cursor-pointer text-white w-28 h-28 md:w-40 md:h-40 rounded-full hover:bg-blue-500 absolute z-100 md:-bottom-15 -bottom-10 right-30 flex items-center justify-center"
             >
               Submit
             </button>

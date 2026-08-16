@@ -8,9 +8,10 @@ const Contact = () => {
     name: "",
     email: "",
     organization: "",
-    services: "",
+    service: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   useGSAP(() => {
     gsap.to("#contact", {
@@ -30,10 +31,40 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted data:", formData);
-    // You can send `formData` to an API here
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          subject: `New project inquiry from ${formData.name || "website"}`,
+          from_name: formData.name,
+          ...formData,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          organization: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Contact form submission failed:", err);
+      setStatus("error");
+    }
   };
   return (
     <section
@@ -79,13 +110,24 @@ const Contact = () => {
             </div>
           ))}
 
-          <div className="flex-1 flex">
+          <div className="flex-1 flex items-center gap-4">
             <button
               type="submit"
-              className="bg-blue-600 cursor-pointer text-white w-28 h-28 md:w-40 md:h-40 rounded-full hover:bg-blue-500 absolute z-100 md:-bottom-15 -bottom-10 right-30 flex items-center justify-center"
+              disabled={status === "sending"}
+              className="bg-blue-600 cursor-pointer text-white w-28 h-28 md:w-40 md:h-40 rounded-full hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed absolute z-100 md:-bottom-15 -bottom-10 right-30 flex items-center justify-center"
             >
-              Submit
+              {status === "sending" ? "Sending..." : "Submit"}
             </button>
+            {status === "success" && (
+              <p className="text-green-400 absolute -bottom-24 md:-bottom-15 left-0">
+                Thanks! Your message has been sent.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-red-400 absolute -bottom-24 md:-bottom-15 left-0">
+                Something went wrong. Please try again or email me directly.
+              </p>
+            )}
           </div>
         </form>
 
